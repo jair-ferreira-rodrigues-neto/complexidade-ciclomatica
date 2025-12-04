@@ -1,29 +1,30 @@
 package org.example;
 
-public class CalculadoraIMC {
-    public static String calcularIMC(double peso, double altura, boolean sexo) {
-        double imc = peso / Math.pow(altura, 2);
+public class IndiceIfs {
 
-        if (sexo) {
-            if (imc < 20.7) {
+    public String calcularIMC(IDadosCorporais dados) {
+        double imc = dados.getPeso() / Math.pow(dados.getAltura(), 2);
+
+        if (dados.isSexo().equals(("Masculino"))) {
+            if (imc < 20.7f) {
                 return "Abaixo do peso";
-            } else if (imc < 26.4) {
+            } else if (imc < 26.4f) {
                 return "No peso normal";
-            } else if (imc < 27.8) {
+            } else if (imc < 27.8f) {
                 return "Marginalmente acima do peso";
-            } else if (imc < 31.1) {
+            } else if (imc < 31.1f) {
                 return "Acima do peso ideal";
             } else {
                 return "Obeso";
             }
         } else {
-            if (imc < 19.1) {
+            if (imc < 19.1f) {
                 return "Abaixo do peso";
-            } else if (imc < 25.8) {
+            } else if (imc < 25.8f) {
                 return "No peso normal";
-            } else if (imc < 27.3) {
+            } else if (imc < 27.3f) {
                 return "Marginalmente acima do peso";
-            } else if (imc < 32.3) {
+            } else if (imc < 32.3f) {
                 return "Acima do peso ideal";
             } else {
                 return "Obeso";
